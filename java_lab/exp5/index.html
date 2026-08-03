@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🛒 Shopping Cart Calculator</h1>
+
+    <div class="box">
+
+        <h3>Select Product</h3>
+
+        <select id="product">
+            <option value="60"> Milk - ₹60</option>
+            <option value="250"> Mangoes - ₹250</option>
+            <option value="120"> Chocolate - ₹120</option>
+            <option value="2500"> Whey Protein - ₹2500</option>
+        </select>
+
+        
+        <button onclick="addSelectedItem()">Add Selected Item</button>
+
+    </div>
+
+    <hr>
+
+    <div class="box">
+
+        <h3>Add Custom Product</h3>
+
+        <input type="text" id="item" placeholder="Product Name">
+
+        <input type="number" id="price" placeholder="Price">
+
+        
+        <button onclick="addCustomItem()">Add Custom Item</button>
+
+    </div>
+
+    <hr>
+
+    <div class="box">
+
+        <h3>Discount</h3>
+
+        <input
+        type="number"
+        id="discount"
+        value="0"
+        min="0"
+        max="100"
+        onchange="calculateDiscount()">
+
+    </div>
+
+    <hr>
+
+    <h2>Cart Items</h2>
+
+    <ul id="cart"></ul>
+
+    <div class="bill">
+
+        <h3>Subtotal : ₹ <span id="subtotal">0</span></h3>
+
+        <h3>Discount : ₹ <span id="discountAmount">0</span></h3>
+
+        <h2>Total : ₹ <span id="finalTotal">0</span></h2>
+
+    </div>
+
+    
+    <button class="clear" onclick="clearCart()">Clear Cart</button>
+
+</div>
+
+
+
+<script>
+
+function clearCart()
+{
+    cartItems=[];
+    displayCart();
+}
+
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
