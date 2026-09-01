@@ -1,9 +1,7 @@
-// Array
-
 let cartItems=[];
 
 
-// Add predefined item
+
 
 function addSelectedItem()
 {
@@ -28,7 +26,7 @@ function addSelectedItem()
 
 
 
-// Add custom item
+
 
 function addCustomItem()
 {
@@ -61,7 +59,7 @@ function addCustomItem()
 
 
 
-// Display Cart
+
 
 function displayCart()
 {
@@ -97,7 +95,7 @@ function displayCart()
 
 
 
-// Discount
+
 
 function calculateDiscount()
 {
@@ -131,6 +129,6 @@ function calculateDiscount()
 
 
 
-// Initially show empty cart
+
 
 displayCart();

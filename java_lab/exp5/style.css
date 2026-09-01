@@ -106,7 +106,7 @@ button:hover{
 
 .clear{
 
-    background:#e53935;
+    background:#945755;
 
     margin-top:20px;
 
@@ -156,13 +156,13 @@ li{
 
     border-radius:10px;
 
-    box-shadow:0 0 8px rgba(0,0,0,.1);
+    box-shadow:0 0 8px rgba(95, 4, 4, 0.1);
 
 }
 
 .bill h2{
 
-    color:green;
+    color:rgb(91, 247, 91);
 
     margin-top:10px;
 
@@ -177,4 +177,16 @@ li{
 hr{
 
     margin:20px 0;
+}
+
+footer{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    color:white;
+
+    font-size:14px;
+
 }

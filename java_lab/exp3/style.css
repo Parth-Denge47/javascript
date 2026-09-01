@@ -12,3 +12,10 @@ button{
     cursor:pointer;
     margin-top:10px;
 }
+
+footer{
+    text-align:center;
+    margin-top:25px;
+    font-size:14px;
+    color:#333;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript String Operations</h1>
+
+        <div class="card">
+            <h2>String Operations</h2>
+
+            <input
+                type="text"
+                id="stringInput"
+                placeholder="Enter a string"
+            >
+
+            <div class="buttons">
+                <button onclick="showSubstring()">Substring</button>
+                <button onclick="findIndex()">Index Of</button>
+                <button onclick="splitString()">Split</button>
+                <button onclick="replaceString()">Replace</button>
+                <button onclick="reverseString()">Reverse</button>
+            </div>
+
+            <div id="stringResult" class="result">
+                Result will appear here
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Count Vowels</h2>
+
+            <textarea
+                id="paragraphInput"
+                placeholder="Enter a paragraph..."
+            ></textarea>
+
+            <button onclick="countVowels()">Count Vowels</button>
+
+            <div id="vowelResult" class="result">
+                Vowel count will appear here
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
