@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gym Admission Form</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap'); *{box-sizing:border-box} body{font-family:Outfit,Arial,sans-serif;background:linear-gradient(135deg,#eef2ff,#f8fafc,#ecfeff);min-height:100vh;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:35px 20px;color:#172033}.container{width:100%;max-width:560px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.8);border-radius:22px;box-shadow:0 24px 70px rgba(31,41,55,.15);overflow:hidden}.banner{background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:32px 36px}.banner .eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ddd6fe;margin:0 0 8px}.banner h2{font-family:Space Grotesk,sans-serif;font-size:29px;font-weight:700;color:#fff;margin:0 0 7px}.banner .subtitle{color:#ede9fe;font-size:14px;margin:0}form{padding:28px 36px 34px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}label{display:block;margin-top:17px;font-size:13px;font-weight:600;color:#374151}input,select{width:100%;padding:12px 14px;margin-top:7px;font-family:Outfit,Arial,sans-serif;font-size:14px;color:#111827;background:#f8fafc;border:1px solid #dbe1ea;border-radius:10px;outline:none;transition:.2s}input:focus,select:focus{background:#fff;border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}.error{display:block;color:#dc2626;font-size:12px;margin-top:5px;min-height:14px}.success{color:#059669;font-size:14px;text-align:center;font-weight:600;margin-top:16px;margin-bottom:0}button{width:100%;padding:13px;margin-top:24px;font-family:Space Grotesk,sans-serif;font-size:15px;font-weight:700;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:none;border-radius:10px;cursor:pointer;box-shadow:0 10px 24px rgba(79,70,229,.25);transition:.2s}button:hover{transform:translateY(-1px);box-shadow:0 14px 28px rgba(79,70,229,.32)}.footer{max-width:560px;margin:18px auto 0;text-align:center}.footer-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9ca3af;margin:0}.footer-name{font-size:14px;font-weight:700;color:#374151;margin:3px 0 0}.footer-meta{font-size:12px;color:#6b7280;margin:2px 0 0}@media(max-width:480px){body{padding:20px 14px}.banner{padding:27px 24px}.banner h2{font-size:25px}form{padding:23px 24px 28px}.field-row{grid-template-columns:1fr}}</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="banner">
+        <p class="eyebrow">Membership Registration</p>
+        <h2>Gym Admission Form</h2>
+        <p class="subtitle">Your journey to Fitness starts here!</p>
+    </div>
+
+    <form id="gymForm">
+
+        <label>Full Name</label>
+        <input type="text" id="name">
+        <span id="nameError" class="error"></span>
+
+        <div class="field-row">
+            <div>
+                <label>Age</label>
+                <input type="number" id="age">
+                <span id="ageError" class="error"></span>
+            </div>
+            <div>
+                <label>Mobile Number</label>
+                <input type="text" id="mobile">
+                <span id="mobileError" class="error"></span>
+            </div>
+        </div>
+
+        <label>Email</label>
+        <input type="email" id="email">
+        <span id="emailError" class="error"></span>
+
+        <label>Membership Plan</label>
+        <select id="plan">
+            <option value="">Select Plan</option>
+            <option>Monthly</option>
+            <option>Quarterly</option>
+            <option>Yearly</option>
+        </select>
+        <span id="planError" class="error"></span>
+
+        <button type="submit">Submit</button>
+
+        <p id="result" class="success"></p>
+
+    </form>
+</div>
+
+<div class="footer">
+    <p class="footer-label">Designed By</p>
+    <p class="footer-name">Parth Denge</p>
+    <p class="footer-meta">PRN 24070521018</p>
+    <p class="footer-meta">Batch A1</p>
+</div>
+
+<script>
+
+document.getElementById("name").addEventListener("blur", function(){
+    let name=this.value;
+    if(/^[A-Za-z ]+$/.test(name)){
+        document.getElementById("nameError").innerHTML="";
+    }else{
+        document.getElementById("nameError").innerHTML="Only letters allowed.";
+    }
+});
+
+document.getElementById("name").addEventListener("focus", function(){
+    document.getElementById("nameError").innerHTML="";
+});
+
+document.getElementById("age").addEventListener("blur", function(){
+    let age=this.value;
+    if(age>=16 && age<=60){
+        document.getElementById("ageError").innerHTML="";
+    }else{
+        document.getElementById("ageError").innerHTML="Age must be between 16 and 60.";
+    }
+});
+
+document.getElementById("age").addEventListener("focus", function(){
+    document.getElementById("ageError").innerHTML="";
+});
+
+document.getElementById("email").addEventListener("blur", function(){
+    let email=this.value;
+    let pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(pattern.test(email)){
+        document.getElementById("emailError").innerHTML="";
+    }else{
+        document.getElementById("emailError").innerHTML="Invalid email.";
+    }
+});
+
+document.getElementById("email").addEventListener("focus", function(){
+    document.getElementById("emailError").innerHTML="";
+});
+
+document.getElementById("mobile").addEventListener("blur", function(){
+    let mobile=this.value;
+
+    if(/^\d{10}$/.test(mobile)){
+        document.getElementById("mobileError").innerHTML="";
+    }else{
+        document.getElementById("mobileError").innerHTML="Enter 10-digit mobile number.";
+    }
+});
+
+document.getElementById("mobile").addEventListener("focus", function(){
+    document.getElementById("mobileError").innerHTML="";
+});
+
+document.getElementById("plan").addEventListener("change", function(){
+    if(this.value==""){
+        document.getElementById("planError").innerHTML="Please select a plan.";
+    }else{
+        document.getElementById("planError").innerHTML="";
+    }
+});
+
+document.getElementById("gymForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    if(
+        document.getElementById("nameError").innerHTML=="" &&
+        document.getElementById("ageError").innerHTML=="" &&
+        document.getElementById("emailError").innerHTML=="" &&
+        document.getElementById("mobileError").innerHTML=="" &&
+        document.getElementById("plan").value!=""
+    ){
+        document.getElementById("result").innerHTML="Gym Admission Successful!";
+    }
+    else{
+        document.getElementById("result").innerHTML="";
+        alert("Please correct the errors before submitting.");
+    }
+});
+
+</script>
+
+</body>
+</html>
