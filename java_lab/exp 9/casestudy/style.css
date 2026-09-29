@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background: #f4f7fb;
+
+    color: #222;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: white;
+
+    padding: 30px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+header p {
+    opacity: 0.9;
+
+    font-size: 15px;
+}
+
+
+/* ================= BUTTON ================= */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#themeButton {
+    background: white;
+
+    color: #4f46e5;
+}
+
+#themeButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.clear-btn {
+    background: #ef4444;
+
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #dc2626;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+}
+
+
+/* ================= WELCOME CARD ================= */
+
+.welcome-card {
+    background: white;
+
+    padding: 25px 30px;
+
+    border-radius: 16px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    border-left: 6px solid #4f46e5;
+}
+
+.welcome-card h2 {
+    color: #4f46e5;
+
+    margin-bottom: 8px;
+}
+
+.welcome-card p {
+    color: #666;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-container {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    overflow-x: auto;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+}
+
+th {
+    background: #4f46e5;
+
+    color: white;
+
+    padding: 18px;
+
+    font-size: 16px;
+}
+
+td {
+    padding: 18px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+
+    font-size: 15px;
+}
+
+tbody tr {
+    transition: 0.25s;
+
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background: #eef2ff;
+
+    transform: scale(1.005);
+}
+
+.day {
+    font-weight: bold;
+
+    color: #4f46e5;
+
+    background: #f5f3ff;
+
+    font-size: 17px;
+}
+
+
+/* ================= STORAGE CARDS ================= */
+
+.storage-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.storage-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.storage-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    background: #eef2ff;
+}
+
+.storage-card h3 {
+    margin-bottom: 8px;
+
+    color: #4f46e5;
+}
+
+.storage-card p {
+    margin-bottom: 5px;
+}
+
+.storage-card small {
+    color: #777;
+}
+
+
+/* ================= INFO BOX ================= */
+
+.info-box {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    margin-top: 30px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-box h3 {
+    color: #4f46e5;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.info-grid div {
+    text-align: center;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #f5f3ff;
+}
+
+.info-grid span {
+    display: inline-flex;
+
+    width: 35px;
+
+    height: 35px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 50px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #111827;
+
+    color: white;
+}
+
+footer p:first-child {
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+footer p:last-child {
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+    background: #111827;
+
+    color: #f9fafb;
+}
+
+body.dark .welcome-card,
+body.dark .table-container,
+body.dark .storage-card,
+body.dark .info-box {
+    background: #1f2937;
+
+    color: white;
+}
+
+body.dark .welcome-card p,
+body.dark .storage-card small {
+    color: #cbd5e1;
+}
+
+body.dark td {
+    border-color: #374151;
+}
+
+body.dark tbody tr:hover {
+    background: #374151;
+}
+
+body.dark .day {
+    background: #312e81;
+
+    color: white;
+}
+
+body.dark .info-grid div {
+    background: #312e81;
+}
+
+body.dark .storage-card .icon {
+    background: #312e81;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .welcome-card {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+    }
+
+    .storage-section {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 95%;
+    }
+}

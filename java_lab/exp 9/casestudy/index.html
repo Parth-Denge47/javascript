@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar Schedule Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>Seminar Schedule Planner</h1>
+            <p>XML and Web Technology Seminar</p>
+        </div>
+
+        <button id="themeButton" onclick="toggleTheme()">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+    <main>
+
+        <section class="welcome-card">
+            <div>
+                <h2>📅 Seminar Schedule</h2>
+                <p>Click on any schedule to view its details.</p>
+            </div>
+
+            <button class="clear-btn" onclick="clearPreferences()">
+                Clear Preferences
+            </button>
+        </section>
+
+        <section class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th rowspan="2">Day</th>
+                        <th colspan="2">Schedule</th>
+                        <th rowspan="2">Topic</th>
+                    </tr>
+
+                    <tr>
+                        <th>Begin</th>
+                        <th>End</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr onclick="showSchedule('Monday', '8:00 a.m.', '5:00 p.m.', 'Introduction to XML')">
+                        <td rowspan="2" class="day">Monday</td>
+                        <td rowspan="2">8:00 a.m.</td>
+                        <td rowspan="2">5:00 p.m.</td>
+                        <td>Introduction to XML</td>
+                    </tr>
+
+                    <tr onclick="showSchedule('Monday', '8:00 a.m.', '5:00 p.m.', 'Validity: DTD and Relax NG')">
+                        <td>Validity: DTD and Relax NG</td>
+                    </tr>
+
+                    <tr onclick="showSchedule('Tuesday', '8:00 a.m.', '11:00 a.m.', 'XPath')">
+                        <td rowspan="3" class="day">Tuesday</td>
+                        <td>8:00 a.m.</td>
+                        <td>11:00 a.m.</td>
+                        <td>XPath</td>
+                    </tr>
+
+                    <tr onclick="showSchedule('Tuesday', '11:00 a.m.', '2:00 p.m.', 'XSL Transformations')">
+                        <td>11:00 a.m.</td>
+                        <td>2:00 p.m.</td>
+                        <td>XSL Transformations</td>
+                    </tr>
+
+                    <tr onclick="showSchedule('Tuesday', '2:00 p.m.', '5:00 p.m.', 'XSL Formatting Objects')">
+                        <td>2:00 p.m.</td>
+                        <td>5:00 p.m.</td>
+                        <td>XSL Formatting Objects</td>
+                    </tr>
+
+                    <tr onclick="showSchedule('Wednesday', '8:00 a.m.', '12:00 p.m.', 'XSL Formatting Objects')">
+                        <td class="day">Wednesday</td>
+                        <td>8:00 a.m.</td>
+                        <td>12:00 p.m.</td>
+                        <td>XSL Formatting Objects</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section class="storage-section">
+
+            <div class="storage-card">
+                <div class="icon">💾</div>
+
+                <div>
+                    <h3>LocalStorage</h3>
+
+                    <p>
+                        Selected Day:
+                        <strong id="dayStatus">None</strong>
+                    </p>
+
+                    <small>
+                        The selected day remains saved after closing the browser.
+                    </small>
+                </div>
+            </div>
+
+            <div class="storage-card">
+                <div class="icon">🕐</div>
+
+                <div>
+                    <h3>SessionStorage</h3>
+
+                    <p>
+                        Selected Topic:
+                        <strong id="topicStatus">None</strong>
+                    </p>
+
+                    <small>
+                        The selected topic is saved only for the current session.
+                    </small>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Experiment 9 — LocalStorage & SessionStorage</p>
+        <p>© 2026 Seminar Schedule Planner</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>     
